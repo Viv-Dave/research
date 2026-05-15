@@ -8,11 +8,16 @@
 
 This repository contains a PyTorch implementation of a Bidirectional Encoder Rpresentations from Transformers. The primary task as per the paper is to identify the correct token masked, masking 15\% randomly.
 
-This project serves as my first step towards thr Transformer architecture and its usecases.
-<!-- 
-The core research questions explored are:
+This project serves as my first step towards the Transformer architecture and its usecases.
 
-- -->
+The core research topics explored are:
+
+How Attention Works?
+
+Benefits of MultiHeadedAttention
+
+Stacking Transformer Layers
+
 ---
 
 ## 2. Model Architecture
@@ -23,7 +28,7 @@ The model `BERT` is composed of a standard Transformer Encoder based architectur
 
 - **Attention Head:** The attention head is a key component of any Transformer based architecture. It has three weight matrices calculating vectors for Query, Key and Value. The output is a weighted sum of all values.
 - **MultiHeadAttention:** Multiple attention heads calclate multiple tokens in a sequence.
-- **Positional Encoding:** Learnable positional embeddings are added to the patch embeddings to retain spatial information.
+- **Positional Encoding:** Learnable positional embeddings are added to the patch embeddings to retain spatial information of tokens
 - **Transformer Blocks:** The sequence of embeddings is processed by a stack of `4` standard Transformer encoder layers.
 
 ## 3. Results & Analysis
@@ -37,9 +42,8 @@ After training for `4500` epochs, the model achieved a Cross Entropy Loss of `2.
 
 ### Key Observations
 
-- **Successes:** .
-- **Limitations:** .
-- **Impact of Architectural Changes:** .
+- **Successes:** Surprisingly, the model achieved much better performance on CoLA test set as compared to BERT(base).
+- **Limitations:** Since the model has much less number of parameters and attention heads as well as encoder layer as compared to BERT(base) and BERT(large) it is fairly weaker than them on multiple benchmarks such as MRPC, CoLA, SST-2.
 
 ---
 
